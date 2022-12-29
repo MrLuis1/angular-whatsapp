@@ -6,7 +6,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class SuscribeService {
 
   phone$ = new EventEmitter<string>();
-  messageToSend = new EventEmitter<string>();
+  messageToSend = new EventEmitter<any>();
 
   constructor() { }
 }

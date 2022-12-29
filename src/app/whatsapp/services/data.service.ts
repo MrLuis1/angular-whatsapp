@@ -110,6 +110,7 @@ export class DataService {
         };
         this.MasterGETPOST(headersData, this.whatsapp, true, DataWa).then((data: any) => {
           resolve(data);
+          console.log(data)
         }).catch((error: any) => {
           reject(error)
         })

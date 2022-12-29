@@ -12,21 +12,22 @@ export class ButtonComponent implements OnInit {
   newPhone: string = '';
   newMessage: string = '';
 
-  constructor(private susService: SuscribeService) { }
+  constructor(private susService: SuscribeService, private sendWhatsapp: DataService) { }
 
   ngOnInit(): void {
     this.susService.phone$.subscribe(phone => {
       this.newPhone = phone;
       console.log(this.newPhone)
     })
+    this.susService.messageToSend.subscribe(message => {
+      console.log(message.mensaje)
+      this.newMessage = message.mensaje;
+    })
 
   }
 
   sendMessage() {
-    console.log('click')
-    this.susService.messageToSend.subscribe(message => {
-      console.log(message)
-    })
-    // this.newMessage.length < 0 && this.sendWhatsapp.SendWaNotif(this.newMessage, this.newPhone)
+    console.log(this.newMessage, this.newPhone)
+    this.sendWhatsapp.SendWaNotif(this.newMessage, this.newPhone)
   }
 }

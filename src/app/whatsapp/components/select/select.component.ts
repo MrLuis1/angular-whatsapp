@@ -8,8 +8,7 @@ import { SuscribeService } from '../../services/suscribe.service';
 })
 export class SelectComponent implements OnInit {
   mensajes: any[] = [];
-  optionMsj: any;
-  selectedMsj: any = '';
+  selectedMsj: any;
 
   constructor (private susService: SuscribeService) { }
 
@@ -32,7 +31,7 @@ export class SelectComponent implements OnInit {
           },
           {
             name: 'promo 2',
-            mensaje: 'este es el mensaje de la segunda opcion'
+            mensaje: 'este es el mensaje de la segunda promo'
           }
         ]
       }
@@ -43,10 +42,8 @@ export class SelectComponent implements OnInit {
     return new Promise(async(resolve:any, reject:any)=>{
       
       try {
-        if(this.optionMsj.mensaje != undefined){
-          this.selectedMsj = this.optionMsj.mensaje
+        if(this.selectedMsj.mensaje != undefined){
           console.log(this.selectedMsj)
-
           this.susService.messageToSend.emit(this.selectedMsj)
         }
         resolve(this.selectedMsj)

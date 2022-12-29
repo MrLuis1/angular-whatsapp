@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { SuscribeService } from '../../services/suscribe.service';
 
 @Component({
   selector: 'app-text-area',
@@ -8,16 +9,18 @@ import { DataService } from '../../services/data.service';
 })
 
 export class TextAreaComponent {
-  @ViewChild('textArea') message!: ElementRef<string>;
 
   promos: any = []
   messageName: string = '';
   messageBody: string = '';
 
-  constructor( private promo: DataService){ }
+  constructor( private promo: DataService, private susService: SuscribeService){ }
 
   ngOnInit() {
    this.promos = this.promo.getPromo()
-   console.log(this.promos)
+   this.susService.messageToSend.subscribe(message => {
+    this.messageName = message.name;
+    this.messageBody = message.mensaje;
+  })
   }
 }
