@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  Key: 'T0rNaDoK4tr1Na?RTgcNmhKU=',
+  urlApi: 'https://apissl.thomas-talk.me/',
+  ApiKeyApissl: '4p1_[51t3m4s]_f186@th0m4s',
+  lic:'584120202020@c.us',
 };
 
 /*
