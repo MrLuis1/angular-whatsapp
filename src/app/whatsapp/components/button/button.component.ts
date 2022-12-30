@@ -17,10 +17,10 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
     this.susService.phone$.subscribe(phone => {
       this.newPhone = phone;
-      console.log(this.newPhone)
+      //console.log(this.newPhone)
     })
     this.susService.messageToSend.subscribe(message => {
-      console.log(message.mensaje)
+      //console.log(message.mensaje)
       this.newMessage = message.mensaje;
     })
 

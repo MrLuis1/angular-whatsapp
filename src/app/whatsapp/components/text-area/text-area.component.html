@@ -1,4 +1,4 @@
-<div class="col-10 col-offset-1">
+<div class="col-10 col-offset-1" *ngIf="messageBody.length > 0">
     <p-card [header]="messageName">
         {{ messageBody }}
     </p-card>

@@ -74,18 +74,12 @@ export class DataService {
   }
 
   getPromo() {
-    return new Promise(async (resolve: any, reject: any) => {
-      const headersData = {
-        method: `GetAllPromo`,
-        token: this.ApiKeyApissl,
-        platform: "PROMOS"
-      };
-      this.MasterGETPOST(headersData, this.consulta).then((data: any) => {
-        resolve(data);
-      }).catch((error: any) => {
-        reject(error)
-      })
-    })
+    const headersData = {
+      method: `GetAllPromo`,
+      token: this.ApiKeyApissl,
+      platform: "PROMOS"
+    };
+    this.MasterGETPOST(headersData, this.consulta)
   }
 
   SendWaNotif(Content: string, Number: string) {
