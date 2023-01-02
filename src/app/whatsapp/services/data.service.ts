@@ -10,7 +10,7 @@ import { SeguridadDatos } from './encrypt.service';
 export class DataService {
   consulta = environment.urlApisslThomasConsulta;
   whatsapp = environment.urlApisslThomasSend;
-  ApiKeyApissl = environment.ApiKeyApissl;
+  akssl = `${environment.akssl1}${environment.akssl2}`;
   constructor( private http: HttpClient, private security: SeguridadDatos) { }
 
   isJsonString(jsonToParse: any) {
@@ -25,8 +25,8 @@ export class DataService {
   MasterGETPOST(headersData: any, url: string, post?: boolean, body?: any) {
     return new Promise(async (resolve: any, reject: any) => {
       if (post) {
-        console.log(headersData); 
-        console.log(body); 
+        // console.log(headersData); 
+        // console.log(body); 
         this.security.EncrypDataHash(headersData).then((headers: any) => {
           this.http.post(url, body, { headers }).subscribe((res: any) => {
             let jsonres;
@@ -40,7 +40,7 @@ export class DataService {
               }
               resolve(jsonres);
             }catch (error) {
-              console.log(error)
+              // console.log(error)
             }
           })
         }).catch((error: any) => {
@@ -77,7 +77,7 @@ export class DataService {
     return new Promise(async (resolve: any, reject: any) => {
       const headersData = {
         method: `GetAllPromo`,
-        token: this.ApiKeyApissl,
+        token: this.akssl,
         platform: "PROMOS"
       };
       this.MasterGETPOST(headersData, this.consulta).then((data: any) => {
@@ -105,7 +105,7 @@ export class DataService {
         }
         const headersData = {
           method: `SendWhats`,
-          token: this.ApiKeyApissl,
+          token: this.akssl,
           platform: "whatsapp",
         };
         this.MasterGETPOST(headersData, this.whatsapp, true, DataWa).then((data: any) => {

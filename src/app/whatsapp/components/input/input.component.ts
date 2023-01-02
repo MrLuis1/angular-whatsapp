@@ -17,7 +17,6 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.pipe(filter((param) => param['number'])).subscribe((res) => {
-      console.log('res :>> ', res);
       if (res['number']) {
         this.value = `${res['number']}`;
         this.susService.phone$.emit(this.value)

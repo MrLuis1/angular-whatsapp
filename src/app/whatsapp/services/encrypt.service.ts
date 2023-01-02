@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { environment } from "src/environments/environment";
+import { environment } from "src/environments/environment.prod";
 var CryptoJS = require("crypto-js");
 
 @Injectable({
@@ -8,7 +8,7 @@ var CryptoJS = require("crypto-js");
 export class SeguridadDatos {
     constructor() { }
 
-    key: string = environment.Key;
+    key: string = `${environment.k1}${environment.k2}`;
 
     //Encripta la los datos
     public encrypt(str: string){

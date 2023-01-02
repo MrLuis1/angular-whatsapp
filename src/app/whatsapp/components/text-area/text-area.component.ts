@@ -21,7 +21,7 @@ export class TextAreaComponent {
 
     this.susService.messageToSend.subscribe(message => {
 
-      console.log(message)
+      // console.log(message)
 
       this.messageTitle = message.name;
       this.messageName = message.mensaje;

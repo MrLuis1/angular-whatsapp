@@ -6,9 +6,6 @@ import {CardModule} from 'primeng/card';
 import {CascadeSelectModule} from 'primeng/cascadeselect';
 import {InputTextModule} from 'primeng/inputtext';
 
-
-
-
 @NgModule({
   declarations: [],
   exports: [

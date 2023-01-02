@@ -55,7 +55,7 @@ export class SelectComponent implements OnInit {
         }
       ]
     }).catch((err) => {
-      console.log('err :>> ', err);
+      /// console.log('err :>> ', err);
     });
 
   }
