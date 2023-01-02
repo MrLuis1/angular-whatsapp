@@ -1,6 +1,9 @@
 <div class="col-10 col-offset-1">
     <p-card [header]="messageTitle" *ngIf="messageName.length > 0">
-        <div class="grid" *ngIf="!promoExist" [innerHtml]="messageName">
+        <div class="grid" *ngIf="!promoExist">
+            <div class="col-12">
+                {{ messageName }}
+            </div>
         </div>
         <div class="grid" *ngIf="promoExist">
             <div class="col-12 md:col-6">

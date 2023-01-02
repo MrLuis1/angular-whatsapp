@@ -22,7 +22,7 @@ export class SelectComponent implements OnInit {
       this.mensajes = [
         {
           name: 'Zelle',
-          mensaje: `ZELLE:\n\npagos3@fibextelecom.net\nFibex Telecom LLC`
+          mensaje: `ZELLE:\n\npagos3@fibextelecom.net Fibex Telecom LLC`
         },
         {
           name: 'Bank of America',
