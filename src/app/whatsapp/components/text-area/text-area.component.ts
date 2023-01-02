@@ -1,5 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { Component } from '@angular/core';
 import { SuscribeService } from '../../services/suscribe.service';
 
 @Component({
@@ -9,18 +8,31 @@ import { SuscribeService } from '../../services/suscribe.service';
 })
 
 export class TextAreaComponent {
-
-  promos: any = []
+  
+  descriptionMessage: string = '';
+  messageTitle: string = '';
   messageName: string = '';
-  messageBody: string = '';
+  promoExist: boolean = false;
+  promoImg: string = '';
 
-  constructor( private promo: DataService, private susService: SuscribeService){ }
+  constructor( private susService: SuscribeService ){ }
 
   ngOnInit() {
-   this.promos = this.promo.getPromo()
-   this.susService.messageToSend.subscribe(message => {
-    this.messageName = message.name;
-    this.messageBody = message.mensaje;
-  })
+
+    this.susService.messageToSend.subscribe(message => {
+
+      console.log(message)
+
+      this.messageTitle = message.name;
+      this.messageName = message.mensaje;
+      if(message.hasOwnProperty('img')){
+        this.promoImg = message.img;
+        this.descriptionMessage = message.description
+        this.promoExist = true;
+      }else{
+        this.promoExist = false
+      }
+    })
+
   }
 }

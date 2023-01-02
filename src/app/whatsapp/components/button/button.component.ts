@@ -11,6 +11,7 @@ export class ButtonComponent implements OnInit {
 
   newPhone: string = '';
   newMessage: string = '';
+  newImage: string = '';
 
   constructor(private susService: SuscribeService, private sendWhatsapp: DataService) { }
 
@@ -20,14 +21,18 @@ export class ButtonComponent implements OnInit {
       console.log(this.newPhone)
     })
     this.susService.messageToSend.subscribe(message => {
-      console.log(message.mensaje)
+      console.log(message);
       this.newMessage = message.mensaje;
+      if(message.hasOwnProperty('img')){
+        this.newImage = message.img
+      }else{
+        this.newImage = '';
+      }
     })
 
   }
 
   sendMessage() {
-    console.log(this.newMessage, this.newPhone)
-    this.sendWhatsapp.SendWaNotif(this.newMessage, this.newPhone)
+    this.sendWhatsapp.SendWaNotif(this.newMessage, this.newPhone, this.newImage)
   }
 }

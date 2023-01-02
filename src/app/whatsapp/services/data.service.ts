@@ -88,7 +88,7 @@ export class DataService {
     })
   }
 
-  SendWaNotif(Content: string, Number: string) {
+  SendWaNotif(Content: string, Number: string, Image?: string) {
     return new Promise(async (resolve: any, reject: any) => {
       try {
         let Phone = Number
@@ -98,8 +98,8 @@ export class DataService {
           "Phone": Phone,
           "Archivos": [
             {
-              "filename": "",
-              "path": ""
+              "filename": "promo-image",
+              "path": Image
             }
           ]
         }

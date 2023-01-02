@@ -6,12 +6,11 @@ html {
 
 body {
     display: grid;
-    height: 90vh;
+    height: 100vh;
     place-content: center;
     background-color: #eff3f8;
 }
 
 app-root{
-    min-width: 800px;
-    width: 100vw;
+    min-width: 90vw;
 }

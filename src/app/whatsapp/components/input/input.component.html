@@ -1,8 +1,14 @@
-<input type="text" 
-       class="p-inputtext-md justify-content-center"
-       [(ngModel)]="value" 
-       pInputText 
-       disabled/>
+
+<div class="flex justify-content-center">
+       <input type="text" 
+              class="p-inputtext-md"
+              [(ngModel)]="value" 
+              pInputText 
+              disabled/>
+</div>
+
+<div class="text-center">
+       <h4>El numero seleccionado es {{value}}</h4>
+</div>
        
        
-<h4>El numero seleccionado es {{value}}</h4>
