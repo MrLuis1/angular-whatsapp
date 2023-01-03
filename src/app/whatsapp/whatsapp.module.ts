@@ -8,6 +8,9 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
 import { ButtonComponent } from './components/button/button.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { PrincipalPageComponent } from './principal-page/principal-page.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -17,6 +20,9 @@ import { FormsModule } from '@angular/forms';
     SelectComponent,
     TextAreaComponent,
     ButtonComponent,
+    HeaderComponent,
+    PrincipalPageComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +33,10 @@ import { FormsModule } from '@angular/forms';
     InputComponent,
     SelectComponent,
     TextAreaComponent,
-    ButtonComponent
+    ButtonComponent,
+    HeaderComponent,
+    PrincipalPageComponent,
+    FooterComponent
   ]
 })
 export class WhatsappModule { }

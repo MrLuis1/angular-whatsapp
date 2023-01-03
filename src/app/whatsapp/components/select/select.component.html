@@ -1,21 +1,26 @@
+<div class="flex flex-column">
+	<label>Seleccione un Msj</label>
+	<p-cascadeSelect [(ngModel)]="selectedMsj" 
+					[style]="{ 'border-radius': '50px','width': '269px', 'heigth': '40px'}"
 
-<p-cascadeSelect [(ngModel)]="selectedMsj" 
-				[options]="mensajes" 
-				optionLabel="name" 
-				optionGroupLabel="name"
-				[optionGroupChildren]="['promos']"
-				(onChange)="prueba()">
+					[options]="mensajes" 
+					optionLabel="name" 
+					optionGroupLabel="name"
+					[optionGroupChildren]="['promos']"
+					(onChange)="prueba()"
+					borderRadius="50px">
 
-	<ng-template pTemplate="option" 
-				let-option>
-
-		<div class="country-item">
-			<i class="pi pi-calendar-minus" 
-			   *ngIf="option.promos">
-			</i>
-			<span>{{ option.name }}</span>
-		</div>
-
-	</ng-template>
-</p-cascadeSelect>
+		<ng-template pTemplate="option" 
+					let-option>
+	
+			<div class="country-item">
+				<i class="pi pi-calendar-minus" 
+				   *ngIf="option.promos">
+				</i>
+				<span>{{ option.name }}</span>
+			</div>
+	
+		</ng-template>
+	</p-cascadeSelect>
+</div>
 

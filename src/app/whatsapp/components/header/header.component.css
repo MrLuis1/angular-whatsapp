@@ -1,0 +1,14 @@
+img {
+    width: 11rem;
+    margin: 5px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    height: 4.6rem;
+    width: 100%;
+}

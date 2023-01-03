@@ -12,7 +12,7 @@ import {InputTextModule} from 'primeng/inputtext';
     ButtonModule,
     CardModule,
     CascadeSelectModule,
-    InputTextModule
+    InputTextModule,
   ]
 })
 export class PrimeNgModule { }

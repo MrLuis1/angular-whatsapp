@@ -53,4 +53,9 @@ export class SeguridadDatos {
             }
         })
       }
+
+    // !Desencriptar datos
+    public DecryptData( str : string ){
+        let decrypted = CryptoJS.AES.decrypt(str)
+    }
 }
