@@ -8,10 +8,10 @@ import { SeguridadDatos } from './encrypt.service';
   providedIn: 'root'
 })
 export class DataService {
-  consulta = environment.urlApisslThomasConsulta;
-  whatsapp = environment.urlApisslThomasSend;
+  consulta = this.enc.decrypt(environment.urlApisslThomasConsulta,16,'default');
+  whatsapp = this.enc.decrypt(environment.urlApisslThomasSend,16,'default');
   akssl = `${environment.akssl1}${environment.akssl2}`;
-  constructor( private http: HttpClient, private security: SeguridadDatos) { }
+  constructor( private http: HttpClient, private security: SeguridadDatos, private enc: SeguridadDatos) { }
 
   isJsonString(jsonToParse: any) {
     try {

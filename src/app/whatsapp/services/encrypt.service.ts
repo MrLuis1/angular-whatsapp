@@ -55,7 +55,14 @@ export class SeguridadDatos {
       }
 
     // !Desencriptar datos
-    public DecryptData( str : string ){
-        let decrypted = CryptoJS.AES.decrypt(str)
-    }
+    decrypt(str: string, keySize: number, token: string) {
+        let security = token == 'default' ? this.key : token
+        if ( typeof  str != "number" && str != '' && str != null && str != undefined) {
+          return CryptoJS.AES.decrypt(str, security, {
+            keySize: keySize,
+            mode: CryptoJS.mode.ECB,
+            padding: CryptoJS.pad.Pkcs7,
+        }).toString(CryptoJS.enc.Utf8);
+        }
+      }
 }
