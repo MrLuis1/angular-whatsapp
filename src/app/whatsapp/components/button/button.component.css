@@ -7,3 +7,8 @@ div {
     text-align: center;
     white-space: pre-line;
 }
+
+h3 {
+    font-size: 17px;
+    font-weight: bold;
+}

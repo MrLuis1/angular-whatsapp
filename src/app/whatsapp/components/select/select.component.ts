@@ -15,7 +15,6 @@ export class SelectComponent implements OnInit {
   constructor ( private susService: SuscribeService, private promo: DataService ) { }
 
   ngOnInit() {
-
     this.promo.getPromo()
     .then((result) => {
       this.promos = result  
@@ -55,7 +54,7 @@ export class SelectComponent implements OnInit {
         }
       ]
     }).catch((err) => {
-      /// console.log('err :>> ', err);
+      console.log('err :>> ', err);
     });
 
   }
